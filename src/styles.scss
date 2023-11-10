@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+html, body { height: 100%; }
+body { padding: 24px }
+body * {
+  font-family: cursive;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 50%;
+  height: 99vh;
+  margin: auto;
+}
+
+@media (max-width: 700px) {
+  .container {
+    max-width: 90%;
+    height: 99vh;
+    margin: auto;
+  }
+}
+.center-align {
+  text-align: center;
+}
+.w-100 {
+  width: 100%;
+}
+
+.w-50 {
+  width: 50%;
+}

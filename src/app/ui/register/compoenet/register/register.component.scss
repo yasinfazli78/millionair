@@ -1,0 +1,15 @@
+:host {
+  #signIn{
+    color: #3f51b5;
+    cursor: pointer;
+  }
+  #mt-12 {
+    margin-top: 12px;
+  }
+  ::ng-deep{
+    .mat-card {
+      width: 100%;
+    }
+  }
+
+}
