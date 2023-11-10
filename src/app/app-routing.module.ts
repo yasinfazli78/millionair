@@ -8,6 +8,9 @@ const routes: Routes = [
   {
     path: 'register', loadChildren: () => import('./ui/register/register.module').then(m => m.RegisterModule)
   },
+  {
+    path: 'test', loadChildren: () => import('./ui/test/test.module').then(m => m.TestModule)
+  },
 
 ];
 

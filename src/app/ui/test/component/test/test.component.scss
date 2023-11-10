@@ -1,0 +1,11 @@
+::ng-deep{
+  .mat-card>:last-child:not(.mat-card-footer), .mat-card-content>:last-child:not(.mat-card-footer) {
+    flex-wrap: wrap;
+    display: flex;
+  }
+  .mat-radio-button {
+    flex-basis: 50%;
+
+    margin-top: 20px;
+  }
+}
