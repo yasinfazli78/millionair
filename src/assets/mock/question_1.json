@@ -1,0 +1,23 @@
+{
+"question": "1 - what is best framework for Front-End Developers",
+ "index": 0,
+ "answers": [
+ {
+ "title" : "1- Angular",
+  "isCorrect": true
+ },
+ {
+  "title" : "2- ReactJs",
+   "isCorrect": false
+  },
+  {
+   "title" : "3- VueJs",
+    "isCorrect": false
+   },
+   {
+    "title" : "4- None",
+     "isCorrect": false
+    }
+ ],
+ "point": 5
+}

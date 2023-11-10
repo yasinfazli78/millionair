@@ -1,8 +1,21 @@
-::ng-deep{
-  .mat-card>:last-child:not(.mat-card-footer), .mat-card-content>:last-child:not(.mat-card-footer) {
+
+  .example-radio-group {
     flex-wrap: wrap;
     display: flex;
   }
+  .right{
+    background-color: #c6efc6;
+    border-radius: 12px;
+    box-shadow: 1px 2px 15px 2px #38b90ffc;
+  }
+  .row-next{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 22px;
+  }
+  ::ng-deep{
   .mat-radio-button {
     flex-basis: 50%;
 

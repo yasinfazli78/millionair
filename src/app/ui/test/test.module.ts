@@ -6,6 +6,8 @@ import { TestComponent } from './component/test/test.component';
 import { MatSnackBarModule} from "@angular/material/snack-bar";
 import {MatCardModule} from "@angular/material/card";
 import {MatRadioModule} from "@angular/material/radio";
+import {MatButtonModule} from "@angular/material/button";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -17,7 +19,10 @@ import {MatRadioModule} from "@angular/material/radio";
     TestRoutingModule,
     MatSnackBarModule,
     MatCardModule,
-    MatRadioModule
+    MatRadioModule,
+    MatButtonModule,
+    FormsModule,
+    ReactiveFormsModule,
   ]
 })
 export class TestModule { }
