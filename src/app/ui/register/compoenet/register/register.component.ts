@@ -16,7 +16,7 @@ export class RegisterComponent implements OnInit {
 
   constructor(private registerService: RegisterService, private _snackBar: MatSnackBar, private router: Router) {
     this.formRegister = new FormGroup({
-      email: new FormControl(null, [Validators.required]),
+      email: new FormControl(null, [Validators.required, Validators.email]),
       password: new FormControl(null, [Validators.required]),
     });
   }
