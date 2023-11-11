@@ -8,6 +8,7 @@ import {MatCardModule} from "@angular/material/card";
 import {MatRadioModule} from "@angular/material/radio";
 import {MatButtonModule} from "@angular/material/button";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {MatDialogModule} from "@angular/material/dialog";
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     MatButtonModule,
     FormsModule,
     ReactiveFormsModule,
+    MatDialogModule
   ]
 })
 export class TestModule { }

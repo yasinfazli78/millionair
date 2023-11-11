@@ -1,13 +1,18 @@
 <div class="container-test">
   <div class="question-box">
-    {{questionModel.question}}
+    {{questionModel?.question}}
   </div>
   <mat-radio-group class="example-radio-group">
-    <mat-radio-button [disabled]="showAnswer" (change)="getAnswer(answer.isCorrect, questionModel.point)" *ngFor="let answer of questionModel.answers" [ngClass]="showAnswer && answer.isCorrect ? 'right-answer' : ''"
+    <mat-radio-button [disabled]="showAnswer" (change)="getAnswer(answer.isCorrect, questionModel.point)" *ngFor="let answer of questionModel?.answers" [ngClass]="showAnswer && answer.isCorrect ? 'right-answer' : ''"
                       [value]="answer" class="mt-4 answer-box "> {{answer.title}} </mat-radio-button>
   </mat-radio-group>
 
-  <button [disabled]="id == 5" class="btn-yellow mt-4 cursor-pointer" (click)="next()" >Next</button>
+  <button  class="btn-yellow mt-4 cursor-pointer" (click)="next()" >Next</button>
   <button [disabled]="id == 1" class="btn-yellow mt-4 cursor-pointer" (click)="previous()" >Previous</button>
 
 </div>
+
+
+<ng-template #result>
+  <h1>Overall: {{testService.getScore}}</h1>
+</ng-template>
