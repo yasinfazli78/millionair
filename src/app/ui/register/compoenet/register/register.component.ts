@@ -31,6 +31,7 @@ export class RegisterComponent implements OnInit {
         next: (result: any) => {
           this.router.navigate(['/'])
           this._snackBar.open('You have an account now', 'close', {
+            duration: 1000,
             horizontalPosition: 'center',
             verticalPosition: 'top',
           });

@@ -1,26 +1,17 @@
-<div [formGroup]="formRegister" class="container">
-  <mat-card>
-    <h1 class="center-align">Register Account</h1>
-    <div  class="center-align">
-      <mat-form-field  class="w-50">
-        <mat-label>Email</mat-label>
-        <input formControlName="email" type="email" matInput
-               placeholder="Ex. pat@example.com">
-      </mat-form-field>
-    </div>
-    <div  class="center-align">
-      <mat-form-field class="w-50">
-        <mat-label>Password</mat-label>
-        <input formControlName="password" type="password" matInput
-               placeholder="*********">
-      </mat-form-field>
-    </div>
-    <div class="center-align">
-      <button mat-raised-button color="primary" (click)="register()">register</button>
-    </div>
-    <div id="mt-12" class="center-align">
-      <span [routerLink]="'/'" id="signIn">I  have an account</span>
-    </div>
-  </mat-card>
+<div [formGroup]="formRegister" class="container-login">
+  <img class="logo" src="assets/img/logo.png">
+  <div>
+    <p class="text-EEE">User name</p>
+    <input formControlName="email" type="email" placeholder="Email@example.com">
+  </div>
+  <div class="mt-4">
+    <p class="text-EEE">Password</p>
+    <input formControlName="password" type="password" placeholder="******">
+  </div>
+  <div class="mt-4">
+    <p class="text-EEE">I have an account <span class="text-pink cursor-pointer" [routerLink]="''"> Sign in here </span></p>
+  </div>
+  <div class="mt-4">
+    <button (click)="register()" class="btn-yellow cursor-pointer">Register</button>
+  </div>
 </div>
-

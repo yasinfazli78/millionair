@@ -6,4 +6,14 @@
   #mt-12 {
     margin-top: 12px;
   }
+  .container-login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .logo{
+    width: 160px;
+    height: 160px;
+  }
 }
+
