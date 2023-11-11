@@ -29,6 +29,7 @@ export class LoginComponent implements OnInit {
       this.loginService.isUserExist(this.loginForm.value.email, this.loginForm.value.password).pipe().subscribe({
         next: (result: any) => {
           if (result?.length > 0) {
+            localStorage.setItem('userId','@#$%^&*()')
             this.router.navigate(['/test'])
           } else {
             this._snackBar.open('user doesnt exist!', 'close', {

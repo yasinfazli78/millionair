@@ -1,6 +1,5 @@
-
 <div class="logOut">
-  <button mat-fab [routerLink]="''"  color="" >
+  <button [routerLink]="''" color="" mat-fab>
     Logout
   </button>
 </div>
@@ -10,12 +9,14 @@
     {{questionModel?.question}}
   </div>
   <mat-radio-group class="example-radio-group">
-    <mat-radio-button [disabled]="showAnswer" (change)="getAnswer(answer.isCorrect, questionModel.point)" *ngFor="let answer of questionModel?.answers" [ngClass]="showAnswer && answer.isCorrect ? 'right-answer' : ''"
+    <mat-radio-button (change)="getAnswer(answer.isCorrect, questionModel.point)" *ngFor="let answer of questionModel?.answers"
+                      [disabled]="showAnswer"
+                      [ngClass]="showAnswer && answer.isCorrect ? 'right-answer' : ''"
                       [value]="answer" class="mt-4 answer-box "> {{answer.title}} </mat-radio-button>
   </mat-radio-group>
 
-  <button  class="btn-yellow mt-4 cursor-pointer" (click)="next()" >Next</button>
-  <button [disabled]="id == 1" class="btn-yellow mt-4 cursor-pointer" (click)="previous()" >Previous</button>
+  <button (click)="next()" class="btn-yellow mt-4 cursor-pointer">Next</button>
+  <button (click)="previous()" [disabled]="id == 1" class="btn-yellow mt-4 cursor-pointer">Previous</button>
 
 </div>
 
