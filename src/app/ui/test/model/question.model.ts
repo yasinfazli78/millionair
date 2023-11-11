@@ -1,8 +1,8 @@
 export interface QuestionModel {
+  id: number;
   question: string;
-  index: number;
+  point: number;
   answers: answersModel[];
-  point: number
 }
 
 interface answersModel {

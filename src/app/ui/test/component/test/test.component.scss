@@ -1,24 +1,24 @@
-
-  .example-radio-group {
-    flex-wrap: wrap;
-    display: flex;
-  }
-  .right{
-    background-color: #c6efc6;
-    border-radius: 12px;
-    box-shadow: 1px 2px 15px 2px #38b90ffc;
-  }
-  .row-next{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top: 22px;
-  }
-  ::ng-deep{
-  .mat-radio-button {
-    flex-basis: 50%;
-
-    margin-top: 20px;
-  }
+.container-test{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.question-box{
+  border-radius: 20px;
+  background: #FFF;
+  box-shadow: 0px 20px 50px -10px rgba(0, 0, 0, 0.15);
+  padding: 50px;
+}
+.answer-box{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 20px;
+  background: #FFF;
+  padding: 11px 33px;
+  width: 383px;
+}
+.right-answer{
+  background: #ABD1C6;
 }

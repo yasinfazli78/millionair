@@ -2,8 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {TestService} from "../../service/test.service";
 import {QuestionModel} from "../../model/question.model";
-import {FormControl} from "@angular/forms";
-import {Subject} from "rxjs";
 
 @Component({
   selector: 'app-test',
@@ -11,23 +9,16 @@ import {Subject} from "rxjs";
   styleUrls: ['./test.component.scss']
 })
 export class TestComponent implements OnInit {
+   questionModel!: QuestionModel;
+   id: number = 1;
+   showAnswer: boolean = false;
 
-  options: string[] = ['Winter', 'Spring', 'Summer', 'Autumn'];
-  questionModel!: QuestionModel;
-  index: number = 1;
-  answer = new FormControl();
-  confirmAnswer: boolean = false
 
-  constructor(private _snackBar: MatSnackBar, private testService: TestService) {
+  constructor(private _snackBar: MatSnackBar, private testService: TestService, ) {
   }
 
   ngOnInit(): void {
-    /* this._snackBar.open('Welcome To The Test', 'close', {
-       horizontalPosition: 'center',
-       verticalPosition: 'top',
-     });*/
-
-    this.getQs(this.index);
+    this.getQs(this.id);
   }
 
 
@@ -41,19 +32,20 @@ export class TestComponent implements OnInit {
     );
   }
 
-  nextQuestion(point: number) {
-    this.confirmAnswer = true;
-
-    /*setTimeout(() => {
-      this.confirmAnswer = false;
-      this.index++;
-      this.getQs(this.index);
-    }, 2000)*/
-
+  getAnswer(isCorrect: boolean, point: number) {
+    this.showAnswer = true;
+    this.testService.setScore(isCorrect ? point : 0)
   }
 
-  previousQuestion() {
-    this.index--;
-    this.getQs(this.index);
+  next() {
+    this.showAnswer = false;
+    this.id++;
+    this.getQs(this.id);
+  }
+
+  previous() {
+    this.showAnswer = false;
+    this.id--;
+    this.getQs(this.id);
   }
 }
