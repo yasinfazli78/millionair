@@ -1,15 +1,21 @@
 <div [formGroup]="formRegister" class="container-login">
   <img class="logo" src="assets/img/logo.png">
   <div>
-    <p class="text-EEE">User name</p>
-    <input formControlName="email" type="email" placeholder="Email@example.com">
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input formControlName="email" type="email" matInput
+             placeholder="Ex. pat@example.com">
+    </mat-form-field>
   </div>
   <div class="mt-4">
-    <p class="text-EEE">Password</p>
-    <input formControlName="password" type="password" placeholder="******">
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input formControlName="password" type="password" matInput
+             placeholder="****">
+    </mat-form-field>
   </div>
   <div class="mt-4">
-    <p class="text-EEE">I have an account <span class="text-pink cursor-pointer" [routerLink]="''"> Sign in here </span></p>
+    <p >I have an account <span class="text-pink cursor-pointer" [routerLink]="''"> Sign in here </span></p>
   </div>
   <div class="mt-4">
     <button (click)="register()" class="btn-yellow cursor-pointer">Register</button>
