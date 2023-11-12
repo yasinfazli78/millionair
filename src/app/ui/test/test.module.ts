@@ -9,6 +9,7 @@ import {MatRadioModule} from "@angular/material/radio";
 import {MatButtonModule} from "@angular/material/button";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatDialogModule} from "@angular/material/dialog";
+import {NgCircleProgressModule} from "ng-circle-progress";
 
 
 @NgModule({
@@ -24,7 +25,15 @@ import {MatDialogModule} from "@angular/material/dialog";
     MatButtonModule,
     FormsModule,
     ReactiveFormsModule,
-    MatDialogModule
+    MatDialogModule,
+    NgCircleProgressModule.forRoot({
+      radius: 100,
+      outerStrokeWidth: 16,
+      innerStrokeWidth: 8,
+      outerStrokeColor: "#78C000",
+      innerStrokeColor: "#C7E596",
+      animationDuration: 300,
+    })
   ]
 })
 export class TestModule { }

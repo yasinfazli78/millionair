@@ -5,6 +5,18 @@
 </div>
 
 <div class="container-test">
+
+  <circle-progress
+    [percent]="percent"
+    [radius]="80"
+    [outerStrokeWidth]="8"
+    [innerStrokeWidth]="8"
+    [outerStrokeColor]="'#F8C660'"
+    [innerStrokeColor]="'#FFF'"
+    [animation]="true"
+    [animationDuration]="300"
+  ></circle-progress>
+
   <div class="question-box">
     {{questionModel?.question}}
   </div>
@@ -16,7 +28,7 @@
   </mat-radio-group>
 
   <button (click)="next()" class="btn-yellow mt-4 cursor-pointer">Next</button>
-  <button (click)="previous()" [disabled]="id == 1" class="btn-yellow mt-4 cursor-pointer">Previous</button>
+  <!--<button (click)="previous()" [disabled]="id == 1" class="btn-yellow mt-4 cursor-pointer">Previous</button>-->
 
 </div>
 

@@ -13,6 +13,7 @@ export class TestService {
   setScore(score: any) {
     this.score$.next(score);
     this.getScore += score;
+    debugger
   }
 
   constructor(private http: HttpClient) { }

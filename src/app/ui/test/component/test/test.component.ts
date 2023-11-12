@@ -5,18 +5,17 @@ import {QuestionModel} from "../../model/question.model";
 import {MatDialog} from "@angular/material/dialog";
 
 @Component({
-  selector: 'app-test',
-  templateUrl: './test.component.html',
-  styleUrls: ['./test.component.scss']
+  selector: 'app-test', templateUrl: './test.component.html', styleUrls: ['./test.component.scss']
 })
 export class TestComponent implements OnInit {
-   questionModel!: QuestionModel;
-   id: number = 1;
-   showAnswer: boolean = false;
-   @ViewChild('result', {static: false})result!: any;
+  questionModel!: QuestionModel;
+  id: number = 1;
+  showAnswer: boolean = false;
+  @ViewChild('result', {static: false}) result!: any;
+  percent: number = 0;
 
 
-  constructor(private _snackBar: MatSnackBar, public testService: TestService,private dialog: MatDialog) {
+  constructor(private _snackBar: MatSnackBar, public testService: TestService, private dialog: MatDialog) {
   }
 
   ngOnInit(): void {
@@ -25,13 +24,11 @@ export class TestComponent implements OnInit {
 
 
   getQs(index: number) {
-    this.testService.getQuestion(index).pipe().subscribe(
-      {
-        next: (result: any) => {
-          this.questionModel = result;
-        }
+    this.testService.getQuestion(index).pipe().subscribe({
+      next: (result: any) => {
+        this.questionModel = result;
       }
-    );
+    });
   }
 
   getAnswer(isCorrect: boolean, point: number) {
@@ -41,16 +38,17 @@ export class TestComponent implements OnInit {
 
   next() {
     if (this.id < 5) {
+      this.percent += 25
       this.showAnswer = false;
       this.id++;
       this.getQs(this.id);
-    }else {
-      console.log(this.testService.getScore);
+    } else {
       this.dialog.open(this.result)
     }
   }
 
   previous() {
+    this.percent -= 25
     this.showAnswer = false;
     this.id--;
     this.getQs(this.id);
